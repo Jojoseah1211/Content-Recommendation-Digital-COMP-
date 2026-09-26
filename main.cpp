@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int genreChoice = 0;
+int categoryChoice = 0;
 int durationChoice = 0 ;
+int actionChoice = 0;
 
 int main(){
 
@@ -100,6 +101,32 @@ int main(){
                 cout << "Length:  60s" << endl;
             }
             break;
+        }
+        
+        // Step 4: Simulate TikTok User Interaction
+        if (categoryChoice >= 1 && categoryChoice <= 4) {
+            while(true){
+                cout << "-------------------------------------------------------------" << endl;
+                cout << "Action: (1) Like Video  |  (2) Not Interested  |  (3) Share" << endl;
+                cout << "Select action (1-3): ";
+                if (cin >> actionChoice && (actionChoice >= 1 && actionChoice <= 3)) {
+                    if (actionChoice == 1) {
+                        cout << "Liked! TikTok will recommend more content like this to you." << endl;
+                        break;
+                    }
+                    else if (actionChoice == 2) {
+                        cout << "We will no longer recommend similar content to you in the future." << endl;
+                        break;
+                    }
+                    else if (actionChoice == 3) {
+                        cout << "Link copied. You can now share it with others." << endl;
+                        break;
+                    }
+                }
+                cout << "Invalid input! Please enter a number between 1 and 3." << endl << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }  
         }
 
     return 0;
