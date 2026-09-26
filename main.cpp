@@ -2,6 +2,7 @@
 using namespace std;
 
 int genreChoice = 0;
+int durationChoice = 0 ;
 
 int main(){
 
@@ -100,6 +101,6 @@ int main(){
             }
             break;
         }
-        
+
     return 0;
 }
