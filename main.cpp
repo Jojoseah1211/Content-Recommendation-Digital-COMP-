@@ -1,15 +1,20 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 int categoryChoice = 0;
 int durationChoice = 0 ;
 int actionChoice = 0;
 
+char repeat = 'y';
+
 int main(){
 
     cout << "========================================" << endl;
     cout << "         CONTENT RECOMMENDATION     " << endl;
     cout << "========================================" << endl;
+
+    while (repeat == 'y' || repeat == 'Y') {
 
     // Step 1: Input & Validate Preferred Content Category
     while (true) {
@@ -129,5 +134,25 @@ int main(){
             }  
         }
 
+        // Step 5: Option to continue or exit
+        while (true) {
+            cout << "\nDo you want to get another recommendation? (y/n): ";
+            cin >> repeat;
+
+            if (repeat == 'y' || repeat == 'Y') {
+                break;
+            }
+            else if (repeat == 'n' || repeat == 'N') {
+                cout << "\nExiting Content Simulator. Goodbye!" << endl;
+                return 0;
+            }
+            else {
+                cout << "Invalid input! Please enter y or n." << endl;
+            }
+        }
+    
+    }
+    
+    cout << "\nExiting Content Simulator. Goodbye!" << endl;
     return 0;
 }
