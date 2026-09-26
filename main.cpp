@@ -26,5 +26,20 @@ int main(){
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
+
+    // Step 2: Input & Validate Preferred Duration
+    while (true) {
+        cout << "\nChoose preferred video duration:" << endl;
+        cout << "1. Short (Under 30 seconds)" << endl;
+        cout << "2. Long (60 seconds or more)" << endl;
+        cout << "Enter your choice (1-2): ";
+
+        if (cin >> durationChoice && (durationChoice == 1 || durationChoice == 2)) {
+            break; // Valid input
+        }
+        cout << ">> Invalid input! Please enter 1 or 2." << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
     return 0;
 }
