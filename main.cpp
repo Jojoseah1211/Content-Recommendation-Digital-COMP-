@@ -41,5 +41,65 @@ int main(){
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
+
+        cout << "\n-------------------------------------------------------------" << endl;
+        cout << "                CONTENT RECOMMEND FOR YOU" << endl;
+        cout << "-------------------------------------------------------------" << endl;
+
+        // Step 3: Recommendation Logic using switch & if/else
+        switch (categoryChoice) {
+        case 1: // Comedy
+            if (durationChoice == 1) {
+                cout << "Title:   'When Your WiFi Stops Working During a Game'" << endl;
+                cout << "Creator: @daily_laughs" << endl;
+                cout << "Length:  20s" << endl;
+            }
+            else {
+                cout << "Title:   'Types of Students Before an Exam'" << endl;
+                cout << "Creator: @campus_comedy" << endl;
+                cout << "Length:  75s" << endl;
+            }
+            break;
+
+        case 2: // Tech
+            if (durationChoice == 1) {
+                cout << "Title:   '3 VS Code Shortcuts You Should Know'" << endl;
+                cout << "Creator: @code_tips" << endl;
+                cout << "Length:  25s" << endl;
+            }
+            else {
+                cout << "Title:   'How Does the TikTok Algorithm Work?'" << endl;
+                cout << "Creator: @tech_explained" << endl;
+                cout << "Length:  90s" << endl;
+            }
+            break;
+
+        case 3: // Food
+            if (durationChoice == 1) {
+                cout << "Title:   'Easy 5-Minute Garlic Noodles'" << endl;
+                cout << "Creator: @easy_eats" << endl;
+                cout << "Length:  25s" << endl;
+            }
+            else {
+                cout << "Title:   'How to Make Homemade Ramen from Scratch'" << endl;
+                cout << "Creator: @home_cooking" << endl;
+                cout << "Length:  120s" << endl;
+            }
+            break;
+
+        case 4: // Dance
+            if (durationChoice == 1) {
+                cout << "Title:   'Learn This Viral Dance in 20 Seconds'" << endl;
+                cout << "Creator: @dance_daily" << endl;
+                cout << "Length:  20s" << endl;
+            }
+            else {
+                cout << "Title:   'Full Beginner Hip-Hop Dance Tutorial'" << endl;
+                cout << "Creator: @dance_studio" << endl;
+                cout << "Length:  60s" << endl;
+            }
+            break;
+        }
+        
     return 0;
 }
