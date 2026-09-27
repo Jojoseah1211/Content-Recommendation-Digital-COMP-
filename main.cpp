@@ -36,7 +36,7 @@ int main(){
             break; // Valid input
         }
 
-        cout << ">> Invalid input! Please enter a number between 1 and 4." << endl;
+        cout << "Invalid input! Please enter a number between 1 and 4." << endl;
     }
 
     // Step 2: Input & Validate Preferred Duration
@@ -55,7 +55,7 @@ int main(){
             break; // Valid input
         }
 
-        cout << ">> Invalid input! Please enter 1 or 2." << endl;
+        cout << "Invalid input! Please enter 1 or 2." << endl;
         }
 
         cout << "\n-------------------------------------------------------------" << endl;
@@ -158,7 +158,7 @@ int main(){
             if (ss >> repeat && !(ss >> extra) && (repeat == 'y' || repeat == 'Y' || repeat == 'n' || repeat == 'N')) {
                 break;
             }
-            cout << ">> Invalid input! Please enter 'y' or 'n'." << endl;
+            cout << "Invalid input! Please enter 'y' or 'n'." << endl;
         }
     
     }
