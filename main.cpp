@@ -1,14 +1,16 @@
 #include <iostream>
 #include <limits>
+#include <sstream>
+#include <string>
 using namespace std;
 
-int categoryChoice = 0;
-int durationChoice = 0 ;
-int actionChoice = 0;
-
-char repeat = 'y';
-
 int main(){
+
+    int categoryChoice = 0;
+    int durationChoice = 0 ;
+    int actionChoice = 0;
+
+    char repeat = 'y';
 
     cout << "========================================" << endl;
     cout << "         CONTENT RECOMMENDATION     " << endl;
@@ -25,13 +27,16 @@ int main(){
         cout << "4. Dance & Trends" << endl;
         cout << "Enter your choice (1-4): ";
 
-        if (cin >> categoryChoice && categoryChoice >= 1 && categoryChoice <= 4) {
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        char extra;
+
+        if (ss >> categoryChoice && !(ss >> extra) && categoryChoice >= 1 && categoryChoice <= 4) {
             break; // Valid input
         }
 
         cout << ">> Invalid input! Please enter a number between 1 and 4." << endl;
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
     // Step 2: Input & Validate Preferred Duration
@@ -41,12 +46,16 @@ int main(){
         cout << "2. Long (60 seconds or more)" << endl;
         cout << "Enter your choice (1-2): ";
 
-        if (cin >> durationChoice && (durationChoice == 1 || durationChoice == 2)) {
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        char extra;
+
+        if (ss >> durationChoice && !(ss >> extra) && (durationChoice == 1 || durationChoice == 2)) {
             break; // Valid input
         }
+
         cout << ">> Invalid input! Please enter 1 or 2." << endl;
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         cout << "\n-------------------------------------------------------------" << endl;
@@ -114,7 +123,13 @@ int main(){
                 cout << "-------------------------------------------------------------" << endl;
                 cout << "Action: (1) Like Video  |  (2) Not Interested  |  (3) Share" << endl;
                 cout << "Select action (1-3): ";
-                if (cin >> actionChoice && (actionChoice >= 1 && actionChoice <= 3)) {
+
+                string line;
+                getline(cin, line);
+                stringstream ss(line);
+                char extra;
+
+                if (ss >> actionChoice && !(ss >> extra) && (actionChoice >= 1 && actionChoice <= 3)) {
                     if (actionChoice == 1) {
                         cout << "Liked! TikTok will recommend more content like this to you." << endl;
                         break;
@@ -129,26 +144,21 @@ int main(){
                     }
                 }
                 cout << "Invalid input! Please enter a number between 1 and 3." << endl << endl;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }  
         }
 
         // Step 5: Option to continue or exit
         while (true) {
             cout << "\nDo you want to get another recommendation? (y/n): ";
-            cin >> repeat;
+            string line;
+            getline(cin, line);
+            stringstream ss(line);
+            char extra;
 
-            if (repeat == 'y' || repeat == 'Y') {
+            if (ss >> repeat && !(ss >> extra) && (repeat == 'y' || repeat == 'Y' || repeat == 'n' || repeat == 'N')) {
                 break;
             }
-            else if (repeat == 'n' || repeat == 'N') {
-                cout << "\nExiting Content Simulator. Goodbye!" << endl;
-                return 0;
-            }
-            else {
-                cout << "Invalid input! Please enter y or n." << endl;
-            }
+            cout << ">> Invalid input! Please enter 'y' or 'n'." << endl;
         }
     
     }
